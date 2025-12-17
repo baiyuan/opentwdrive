@@ -1,0 +1,59 @@
+{
+  "name": "UploadLog",
+  "type": "object",
+  "properties": {
+    "file_name": {
+      "type": "string",
+      "description": "\u4e0a\u50b3\u7684\u6a94\u6848\u540d\u7a31"
+    },
+    "file_size": {
+      "type": "number",
+      "description": "\u6a94\u6848\u5927\u5c0f\uff08\u4f4d\u5143\u7d44\uff09"
+    },
+    "file_type": {
+      "type": "string",
+      "description": "\u6a94\u6848\u985e\u578b"
+    },
+    "destinations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "\u4e0a\u50b3\u76ee\u7684\u5730\u5217\u8868"
+    },
+    "upload_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "destination": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "success",
+              "failed"
+            ]
+          },
+          "url": {
+            "type": "string"
+          },
+          "error_message": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "\u6bcf\u500b\u76ee\u7684\u5730\u7684\u4e0a\u50b3\u7d50\u679c"
+    },
+    "upload_duration_ms": {
+      "type": "number",
+      "description": "\u4e0a\u50b3\u8017\u6642\uff08\u6beb\u79d2\uff09"
+    }
+  },
+  "required": [
+    "file_name",
+    "file_size",
+    "destinations"
+  ]
+}
